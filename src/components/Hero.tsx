@@ -13,7 +13,7 @@ interface HeroProps {
 }
 
 export const Hero: React.FC<HeroProps> = ({ data, onOpenCv }) => {
-  const portraitPath = data.profilePhoto || "/assets/images/hero_zekarias_portrait_1793611793619.jpg";
+  const portraitPath = data.profilePhoto || "assets/images/hero_zekarias_portrait_1793611793619.jpg";
 
   const scrollToSection = (id: string) => {
     const el = document.getElementById(id);

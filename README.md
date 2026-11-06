@@ -96,6 +96,9 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+### 💡 Pro Tip: Trailing Slashes
+When visiting your deployed site, ensure you use a trailing slash (e.g., `https://username.github.io/repo/`). This ensures relative asset paths are resolved correctly by the browser.
 ```
 
 ### Option B: Custom Domain Configuration
