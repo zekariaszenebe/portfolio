@@ -11,7 +11,7 @@ interface AboutProps {
 }
 
 export const About: React.FC<AboutProps> = ({ data }) => {
-  const portraitPath = data.profilePhoto || "/src/assets/images/hero_zekarias_portrait_1793611793619.jpg";
+  const portraitPath = data.profilePhoto || "/assets/images/hero_zekarias_portrait_1793611793619.jpg";
 
   return (
     <section id="about" className="py-20 bg-white">

@@ -6,25 +6,19 @@ Official personal portfolio website for **Zekarias Zenebe Ababu**, a **Managemen
 
 ## 🌟 Key Highlights & Features
 
-- **Executive Visual Identity**: Premium dark design with deep navy backgrounds (`#080C14`, `#0B111E`), primary orange accent (`#F4984A`), secondary green accent (`#59A650`), and Inter typography.
-- **Hero Section**: Animated rotating titles typing effect, custom ZZA initials badge, status indicators, profile portrait, and authentic statistics.
+- **Corporate Visual Identity**: Premium light design with clean white backgrounds, solid Slate-900 typography, and professional green accents.
+- **Hero Section**: Custom ZZA initials badge, status indicators, professional generated portrait, and authentic management statistics.
 - **Authentic Credentials**:
   - **Work Experience**: Ethiopian Electric Utility (EEU) Junior Customer Support Officer & Commercial Bank of Ethiopia (CBE) Customer Service Internship.
-  - **Education**: BSc in Management from Mekdela Amba University.
+  - **Education**: BA in Management from Mekdela Amba University.
   - **Core Skills**: Customer Service, CRM, Communication, Problem-solving, Teamwork, Microsoft Office, Time Management, Organizational Skills.
   - **Certificates**: Employability and Job Readiness Skills, Entrepreneurship Skills with document preview & verification modal.
 - **Interactive Operational Prototypes**:
   1. **EEU Feeder Interruption Dashboard**: Live substation feeder monitoring simulator with customer premises lookup and automated outage SMS dispatch drafting.
   2. **Smart Meter Bill Calculator**: Progressive electricity tariff calculator tailored for Ethiopian tariffs in Ethiopian Birr (ETB), including kWh tier breakdown, service charges, VAT, and simulated prepaid smart meter tokens.
-- **Real Contact Integration**: Direct Email, WhatsApp click-to-chat, LinkedIn, and functional contact form connected to an Express backend API, Firestore persistence, and mailto fallback.
+- **Real Contact Integration**: Direct Gmail integration, WhatsApp click-to-chat, LinkedIn, and functional contact form with Firestore persistence.
 - **Curriculum Vitae (CV) Viewer**: Built-in resume viewer with clean print/PDF generation and uploaded document support.
-- **Private Administrator Panel (`/admin` or `#admin`)**:
-  - Secure authentication.
-  - Dashboard analytics overview.
-  - Full CRUD operations for Homepage, About Me, Work Experience, Education, Skills, Certificates, Projects, and CV.
-  - Live Preview toggle before publishing.
-  - Visitor contact inquiries inbox with delete/reply actions.
-  - Firebase configuration tester and manager.
+- **Direct Content Management**: The application is architected for direct modification within the AI Studio environment, maintaining a high-performance, lightweight footprint.
 
 ---
 

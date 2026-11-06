@@ -5,6 +5,8 @@ import {defineConfig} from 'vite';
 
 export default defineConfig(() => {
   return {
+    // base: '/your-repo-name/', // Uncomment and set this if deploying to a GitHub Project page
+    base: process.env.VITE_BASE_URL || './', 
     plugins: [react(), tailwindcss()],
     resolve: {
       alias: {

@@ -14,7 +14,7 @@ export const initialPortfolioData: PortfolioData = {
     "Client Experience & CRM Specialist"
   ],
   heroIntro: "A dedicated and results-oriented professional with experience in customer service, communication, problem-solving, and organizational operations. Currently working at Ethiopian Electric Utility, with a strong interest in professional growth, customer experience, and business development.",
-  profilePhoto: "/src/assets/images/professional_portrait_zekarias_1794002083585.jpg",
+  profilePhoto: "/assets/images/professional_portrait_zekarias_1794002083585.jpg",
   cvUrl: "",
   cvFileName: "Zekarias_Zenebe_Ababu_CV.pdf",
   cvLastUpdated: "2026",
@@ -201,7 +201,7 @@ export const initialPortfolioData: PortfolioData = {
         "Outage statistics & incident logging table"
       ],
       tags: ["Utility Operations", "EEU Support Tool", "Customer Communication", "Outage Tracking"],
-      screenshotUrl: "/src/assets/images/eeu_control_room_banner_1793611794063.jpg",
+      screenshotUrl: "/assets/images/eeu_control_room_banner_1793611794063.jpg",
       isInteractive: true,
       interactiveType: "feeder-dashboard"
     },
@@ -223,7 +223,7 @@ export const initialPortfolioData: PortfolioData = {
         "Energy-saving tips tailored for domestic appliances"
       ],
       tags: ["Tariff Calculation", "Ethiopian Birr (ETB)", "Billing Transparency", "Interactive Calculator"],
-      screenshotUrl: "/src/assets/images/smart_meter_tech_banner_1793611793987.jpg",
+      screenshotUrl: "/assets/images/smart_meter_tech_banner_1793611793987.jpg",
       isInteractive: true,
       interactiveType: "bill-calculator"
     }
