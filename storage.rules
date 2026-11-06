@@ -1,0 +1,18 @@
+rules_version = '2';
+service firebase.storage {
+  match /b/{bucket}/o {
+    // Public read for portfolio media (CVs, certificates, project images, profile photos)
+    match /portfolio/{allPaths=**} {
+      allow read: if true;
+      allow write: if request.auth != null && (
+        request.auth.token.email == 'zekariaszenebe21@gmail.com' ||
+        request.auth.token.email_verified == true
+      ) && request.resource.size < 15 * 1024 * 1024; // 15MB limit
+    }
+
+    // Default deny
+    match /{allPaths=**} {
+      allow read, write: if false;
+    }
+  }
+}

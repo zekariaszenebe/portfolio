@@ -1,0 +1,48 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Default-deny catch-all
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    // Helper functions
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isAdmin() {
+      return isSignedIn() && (
+        exists(/databases/$(database)/documents/admins/$(request.auth.uid)) ||
+        request.auth.token.email == 'zekariaszenebe21@gmail.com'
+      );
+    }
+
+    function isValidId(id) {
+      return id is string && id.size() <= 128 && id.matches('^[a-zA-Z0-9_\\-]+$');
+    }
+
+    // Portfolio documents (public read, admin write)
+    match /portfolio/{portfolioId} {
+      allow read: if isValidId(portfolioId);
+      allow create, update, delete: if isValidId(portfolioId) && isAdmin();
+    }
+
+    // Contact messages (public can create with validation, only admin can read/manage)
+    match /messages/{messageId} {
+      allow create: if isValidId(messageId) &&
+        request.resource.data.name is string && request.resource.data.name.size() >= 2 && request.resource.data.name.size() <= 100 &&
+        request.resource.data.email is string && request.resource.data.email.size() >= 5 && request.resource.data.email.size() <= 150 &&
+        request.resource.data.subject is string && request.resource.data.subject.size() >= 2 && request.resource.data.subject.size() <= 200 &&
+        request.resource.data.message is string && request.resource.data.message.size() >= 5 && request.resource.data.message.size() <= 3000 &&
+        request.resource.data.timestamp is string;
+      allow read, update, delete: if isValidId(messageId) && isAdmin();
+    }
+
+    // Admin whitelist collection
+    match /admins/{adminUid} {
+      allow read: if isValidId(adminUid) && (request.auth.uid == adminUid || isAdmin());
+      allow write: if isValidId(adminUid) && isAdmin();
+    }
+  }
+}
