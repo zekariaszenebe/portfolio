@@ -17,7 +17,7 @@ import {
   UserCheck
 } from 'lucide-react';
 
-interface Ticket {
+export interface Ticket {
   id: string;
   service: 'Ethiopian Electric Utility' | 'Commercial Bank of Ethiopia';
   subject: string;
@@ -36,7 +36,7 @@ interface Ticket {
   agentNotes: string;
 }
 
-const SAMPLE_TICKETS: Ticket[] = [
+export const SAMPLE_TICKETS: Ticket[] = [
   {
     id: 'EEU-ADD-4921',
     service: 'Ethiopian Electric Utility',
@@ -194,7 +194,7 @@ export const TicketTrackerModal: React.FC<{ isOpen: boolean; onClose: () => void
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-black/80 backdrop-blur-md overflow-y-auto animate-in fade-in duration-200">
+    <div className="fixed inset-0 z-[9999] flex items-center justify-center p-3 sm:p-6 bg-black/80 backdrop-blur-md overflow-y-auto animate-in fade-in duration-200">
       <div className="relative w-full max-w-4xl bg-[#0B111E] border border-slate-700/80 rounded-2xl shadow-2xl overflow-hidden my-auto text-slate-100">
         
         {/* Header */}

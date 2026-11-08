@@ -28,7 +28,7 @@ export const Navbar: React.FC<NavbarProps> = ({
 
   const navLinks = [
     { label: 'Home', href: '#home' },
-    { label: 'Support Desk', href: '#support-console' },
+    { label: 'Skills & Capabilities', href: '#skills' },
     { label: 'About', href: '#about' },
     { label: 'Experience', href: '#experience' },
     { label: 'Projects', href: '#projects' },
@@ -39,7 +39,7 @@ export const Navbar: React.FC<NavbarProps> = ({
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
 
-      const sections = ['home', 'support-console', 'about', 'experience', 'projects', 'contact'];
+      const sections = ['home', 'skills', 'about', 'experience', 'projects', 'contact'];
       for (const section of sections) {
         const el = document.getElementById(section);
         if (el) {

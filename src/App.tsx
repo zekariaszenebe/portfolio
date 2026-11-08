@@ -93,23 +93,32 @@ export default function App() {
 
   if (loading) {
     return (
-      <div className="fixed inset-0 bg-white flex flex-col items-center justify-center p-6 text-slate-900 z-50">
+      <div className={`fixed inset-0 flex flex-col items-center justify-center p-6 z-50 transition-colors duration-300 ${darkMode ? 'bg-[#080C14] text-white' : 'bg-slate-50 text-slate-900'}`}>
         <div className="relative">
-          <div className="w-20 h-20 rounded-2xl bg-white border-2 border-slate-900 flex items-center justify-center shadow-lg animate-pulse">
-            <span className="text-3xl font-black text-slate-900">
+          <div className="w-24 h-24 rounded-2xl bg-gradient-to-br from-slate-900 via-slate-950 to-slate-900 border border-emerald-500/30 flex items-center justify-center shadow-2xl shadow-emerald-950/20 ring-4 ring-emerald-500/10">
+            <span className="text-3xl font-black tracking-wider bg-gradient-to-br from-white via-slate-100 to-emerald-400 bg-clip-text text-transparent">
               ZZA
             </span>
           </div>
-          <div className="absolute -bottom-1 -right-1 w-4 h-4 rounded-full bg-green-600 border-2 border-white" />
+          <span className="absolute -top-1 -right-1 flex h-4 w-4">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
+            <span className="relative inline-flex rounded-full h-4 w-4 bg-[#008236] border-2 border-slate-900" />
+          </span>
         </div>
-        <h1 className="text-lg font-bold text-slate-900 mt-6 tracking-wide">
+        <h1 className={`text-xl font-extrabold mt-6 tracking-tight ${darkMode ? 'text-white' : 'text-slate-900'}`}>
           Zekarias Zenebe Ababu
         </h1>
-        <p className="text-xs text-slate-500 mt-1 font-medium">
-          Management Graduate | Customer Support Professional
-        </p>
-        <div className="w-36 h-1 rounded-full bg-slate-100 overflow-hidden mt-6">
-          <div className="h-full bg-slate-900 w-full animate-[progress_1s_ease-in-out_infinite]" />
+        <div className="flex items-center gap-2 mt-2">
+          <span className="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-[#008236]/10 text-[#008236] border border-[#008236]/20">
+            BA in Management
+          </span>
+          <span className="text-xs text-slate-400">·</span>
+          <span className="text-xs font-medium text-slate-500 dark:text-slate-400">
+            Customer Support Professional
+          </span>
+        </div>
+        <div className="w-44 h-1.5 rounded-full bg-slate-200 dark:bg-slate-800 overflow-hidden mt-6 relative">
+          <div className="h-full bg-gradient-to-r from-emerald-500 to-[#008236] w-full animate-[progress_1s_ease-in-out_infinite] rounded-full" />
         </div>
       </div>
     );
@@ -130,12 +139,6 @@ export default function App() {
         <Hero
           data={data}
           onOpenCv={() => setCvOpen(true)}
-        />
-
-        {/* Interactive Customer Support Live Simulator & Workspace */}
-        <SupportDeskWorkspace
-          onOpenKnowledgeBase={() => setKbOpen(true)}
-          onOpenTicketTracker={() => setTicketTrackerOpen(true)}
         />
 
         <About data={data} />

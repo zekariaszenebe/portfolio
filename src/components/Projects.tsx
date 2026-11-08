@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import React, { useState } from 'react';
+import React from 'react';
 import { 
   FolderKanban, 
   ExternalLink, 
@@ -16,25 +16,12 @@ import {
   ArrowRight
 } from 'lucide-react';
 import { Project } from '../types/portfolio';
-import { FeederDashboardModal } from './projects/FeederDashboardModal';
-import { SmartMeterCalculatorModal } from './projects/SmartMeterCalculatorModal';
 
 interface ProjectsProps {
   projects: Project[];
 }
 
 export const ProjectsSection: React.FC<ProjectsProps> = ({ projects }) => {
-  const [activeFeederModal, setActiveFeederModal] = useState<boolean>(false);
-  const [activeCalculatorModal, setActiveCalculatorModal] = useState<boolean>(false);
-
-  const handleOpenInteractive = (project: Project) => {
-    if (project.interactiveType === 'feeder-dashboard') {
-      setActiveFeederModal(true);
-    } else if (project.interactiveType === 'bill-calculator') {
-      setActiveCalculatorModal(true);
-    }
-  };
-
   return (
     <section id="projects" className="py-20 bg-[#f8fafc]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -66,35 +53,12 @@ export const ProjectsSection: React.FC<ProjectsProps> = ({ projects }) => {
                 <h3 className="text-xl font-bold text-slate-900">{project.title}</h3>
                 <p className="text-sm text-slate-600 flex-1">{project.shortDescription}</p>
                 
-                {project.isInteractive ? (
-                  <button
-                    onClick={() => handleOpenInteractive(project)}
-                    className="w-full py-3 rounded-full bg-slate-900 text-white font-bold text-sm hover:bg-slate-800 transition-colors"
-                  >
-                    Launch Interactive Demo
-                  </button>
-                ) : (
-                  <button
-                    className="w-full py-3 rounded-full bg-slate-100 text-slate-900 font-bold text-sm hover:bg-slate-200 transition-colors"
-                  >
-                    View Details
-                  </button>
-                )}
+                {/* No interactive button */}
               </div>
             </div>
           ))}
         </div>
       </div>
-      
-      {/* Interactive Simulators */}
-      <FeederDashboardModal
-        isOpen={activeFeederModal}
-        onClose={() => setActiveFeederModal(false)}
-      />
-      <SmartMeterCalculatorModal
-        isOpen={activeCalculatorModal}
-        onClose={() => setActiveCalculatorModal(false)}
-      />
     </section>
   );
 };

@@ -18,7 +18,7 @@ import {
   CheckCircle2
 } from 'lucide-react';
 
-interface Article {
+export interface Article {
   id: string;
   category: 'EEU Utility Procedures' | 'Smart Metering & Tariffs' | 'CBE Banking Guidelines' | 'Customer Rights';
   title: string;
@@ -27,7 +27,7 @@ interface Article {
   customerScript: string;
 }
 
-const ARTICLES: Article[] = [
+export const ARTICLES: Article[] = [
   {
     id: 'art-1',
     category: 'Smart Metering & Tariffs',
@@ -113,7 +113,7 @@ export const KnowledgeBaseModal: React.FC<{ isOpen: boolean; onClose: () => void
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-black/80 backdrop-blur-md overflow-y-auto animate-in fade-in duration-200">
+    <div className="fixed inset-0 z-[9999] flex items-center justify-center p-3 sm:p-6 bg-black/80 backdrop-blur-md overflow-y-auto animate-in fade-in duration-200">
       <div className="relative w-full max-w-5xl bg-[#0B111E] border border-slate-700/80 rounded-2xl shadow-2xl overflow-hidden my-auto text-slate-100">
         
         {/* Header */}
