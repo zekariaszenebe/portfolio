@@ -123,7 +123,7 @@ export const CvModal: React.FC<CvModalProps> = ({ isOpen, onClose, data }) => {
 
             {/* Professional Summary */}
             <div className="space-y-3">
-              <h2 className="text-xs uppercase tracking-widest font-black text-slate-900 print:text-slate-900 flex items-center gap-2.5">
+              <h2 className="text-xs uppercase tracking-widest font-black text-[#000000] print:text-slate-900 flex items-center gap-2.5">
                 <div className="w-1.5 h-1.5 rounded-full bg-slate-900" />
                 Professional Summary
               </h2>
@@ -134,7 +134,7 @@ export const CvModal: React.FC<CvModalProps> = ({ isOpen, onClose, data }) => {
 
             {/* Experience Section */}
             <div className="space-y-6">
-              <h2 className="text-xs uppercase tracking-widest font-black text-purple-700 print:text-slate-900 flex items-center gap-2.5">
+              <h2 className="text-xs uppercase tracking-widest font-black text-[#000000] print:text-slate-900 flex items-center gap-2.5">
                 <Briefcase className="w-4 h-4 text-green-600" />
                 Work Experience
               </h2>

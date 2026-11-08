@@ -72,22 +72,6 @@ export const CertificatesSection: React.FC<CertificatesProps> = ({ certificates 
 
               {/* Action Buttons */}
               <div className="pt-4 border-t border-slate-100 flex items-center justify-between gap-3">
-                {cert.fileUrl ? (
-                  <a
-                    href={cert.fileUrl}
-                    download={`${cert.title.replace(/\s+/g, '_')}_Certificate`}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="px-3.5 py-2 rounded-xl bg-green-50 hover:bg-green-100 text-green-700 font-bold text-xs border border-green-100 flex items-center gap-1.5 transition-colors"
-                  >
-                    <Download className="w-3.5 h-3.5" />
-                    <span>Download File</span>
-                  </a>
-                ) : (
-                  <span className="text-[11px] text-slate-400 italic">
-                    Institutional Record
-                  </span>
-                )}
               </div>
 
             </div>
