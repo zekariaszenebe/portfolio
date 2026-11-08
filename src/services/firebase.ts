@@ -12,6 +12,7 @@ import {
   collection, 
   addDoc, 
   getDocFromServer,
+  setLogLevel,
   type Firestore 
 } from 'firebase/firestore';
 import { 
@@ -25,6 +26,9 @@ import {
 import { PortfolioData, ContactMessage } from '../types/portfolio';
 import { initialPortfolioData } from '../data/initialPortfolioData';
 import firebaseConfig from '../../firebase-applet-config.json';
+
+// Silence Firestore connectivity warnings in sandbox environments
+setLogLevel('error');
 
 const LOCAL_STORAGE_PORTFOLIO_KEY = 'zza_portfolio_data_v1';
 const LOCAL_STORAGE_MESSAGES_KEY = 'zza_contact_messages_v1';
@@ -104,7 +108,7 @@ async function testConnection() {
     await getDocFromServer(doc(db, 'portfolio', 'main'));
   } catch (error) {
     if (error instanceof Error && error.message.includes('the client is offline')) {
-      console.warn("Firestore connection: client operating in local cache mode.");
+      console.log("Firestore: Client is operating in local cache mode (temporary).");
     }
   }
 }

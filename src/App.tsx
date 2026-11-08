@@ -141,6 +141,8 @@ export default function App() {
           onOpenCv={() => setCvOpen(true)}
         />
 
+        <SkillsSection skills={data.skills} />
+
         <About data={data} />
 
         <WorkProcess />
@@ -148,8 +150,6 @@ export default function App() {
         <ExperienceSection experiences={data.experiences} />
 
         <EducationSection education={data.education} />
-
-        <SkillsSection skills={data.skills} />
 
         <CertificatesSection certificates={data.certificates} />
 
